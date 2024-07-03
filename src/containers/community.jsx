@@ -1,26 +1,51 @@
-import React from 'react'
+import React from 'react';
+import Card1 from '../assets/Card1.svg';
+import Card2 from '../assets/Card2.svg';
 
-import {Text} from '../components'
-import commnuity02 from '../assets/commnuity02.svg'
-import community01 from '../assets/community01.svg'
-import coummunity03 from '../assets/coummunity03.svg'
-
-const community = () => {
+const FeatureSection = () => {
   return (
-    <div className='flex flex-col justify-center items-center mt-[6rem]'>
-       
-        <div>
-        <h1 className='font-semibold text-[36px] text-center leading-[44px] sm:text-[30px] sm:leading-[37px]'>Manage your entire community  <br className='hidden xl:block'/> in a single system</h1>
-        <p className='text-center mt-2'>Who is Nextcent suitable for?</p>
-
-        </div>
-        <div className='flex flex-row justify-around menu:w-[50%] flex-wrap gap-8 items-center w-full mt-8 '>
-            <Text title={"Membership Organisations"} text={"Our membership management software provides full automation of membership renewals and payments"} imgUrl={community01} />
-            <Text title={"National Associations"} text={"Our membership management software provides full automation of membership renewals and payments"} imgUrl={commnuity02} />
-            <Text title={"Clubs And Groups"} text={"Our membership management software provides full automation of membership renewals and payments"} imgUrl={coummunity03} />
-        </div>
+    <div className="bg-gray-900 text-white py-16 px-4">
+      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl mb-4">
+        Never waste more than a day handing over design
+      </h2>
+      <h3 className="text-center text-xl md:text-2xl lg:text-3xl mb-12">
+        requirements with these features:
+      </h3>
+      
+      <div className="flex flex-row sm:flex-col gap-8">
+        <FeatureCard
+          title="Process Map Generation"
+          description="Generate User Journeys and automate the Journey creation flow with AI"
+          imageSrc={Card1}
+          className="md:w-[30%] sm:w-auto"
+        />
+        <FeatureCard
+          title="Automatic AI Generated User Stories"
+          description="Create User Stories with AI based on your User Journeys."
+          imageSrc={Card2}
+          className="w-[70%] sm:w-auto"
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default community
+const FeatureCard = ({ title, description, imageSrc, className }) => {
+  return (
+    <div className={`relative p-[3px] rounded-3xl ${className}`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FF3BFF] via-[#ECBFBF] to-[#5C24FF] rounded-3xl" />
+      <div className="relative bg-gray-900 rounded-3xl p-6 h-full flex flex-col">
+        <div className="mb-4 rounded-2xl overflow-hidden">
+          <img src={imageSrc} alt={title} className="w-full h-auto" />
+        </div>
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-gray-300 mb-4">{description}</p>
+        <div className="mt-auto">
+          <span className="bg-pink-500 text-sm px-2 py-1 rounded-full">Designer</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FeatureSection;

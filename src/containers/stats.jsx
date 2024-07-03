@@ -1,64 +1,41 @@
-import React from 'react'
-import stats01 from '../assets/stats01.svg'
-import stats03 from '../assets/stats03.svg'
-import stats02 from '../assets/stats02.svg'
-import { GiClubs } from "react-icons/gi";
-import stats04 from '../assets/stats04.svg'
+import React from 'react';
 
-const stats = () => {
+const DeliverySquad = () => {
+  const cards = [
+    {
+      icon: '€',
+      title: '80% savings on testing expenditure',
+      description: 'Achieve over $70,000 in testing cost savings, automate QA roles within agile squads, and enable development teams, POs, and developers for streamlined operations and improved collaboration.',
+    },
+    {
+      icon: '◎',
+      title: 'Never lose track of your features',
+      description: 'Streamline documentation across JIRA, Confluence, and git repositories, gain instant product insights, and maintain testing traceability with our comprehensive test script dashboard.',
+    },
+    {
+      icon: '</>', 
+      title: 'Less meetings more coding',
+      description: 'RegOPS requirement briefs are detailed to ensure your engineers enjoy working with us. We provide comprehensive user stories, functional UI test cases, CI integration, automated process flow generation, AI workshops, and more.',
+    },
+  ];
+
   return (
-    <div className='flex flex-row md:flex-col justify-between px-[5rem] py-[2rem] items-center sm:flex-col bg-[#F5F7FA] mt-[4rem]'>
-
-      <div className='flex flex-col'>
-        <h1 className='font-semibold menu:text-[28px] menu:leading-[30px] text-[32px] leading-[44px]'>Helping a local  <br className='hidden xl:block' /> <span className='text-[#4CAF4F]'> business reinvent itself</span></h1>
-        <p>We reached here with our hard work and dedication</p>
-      </div>
-
-      <div className='flex flex-col mt-[3rem]'>
-
-        <div className='flex gap-8 flex-wrap'>
-          <div className='flex flex-row gap-4 justify-center items-center'>
-            <img src={stats01} alt="" />
-            <div>
-              <h1 className='text-[28px]'>2,245,341</h1>
-              <p>Members</p>
-            </div>
+    <div className="bg-gray-900 text-white p-6 md:p-12">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Uplift Your Delivery Squad</h2>
+      <div className="flex flex-row sm:flex-col gap-6">
+        {cards.map((card, index) => (
+          <div 
+            key={index} 
+            className="rounded-lg p-6 bg-gradient-to-br from-pink-600 to-purple-700 hover:from-pink-500 hover:to-purple-600 transition-all duration-300"
+          >
+            <div className="text-4xl mb-4">{card.icon}</div>
+            <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+            <p className="text-sm">{card.description}</p>
           </div>
-
-          <div className='flex flex-row gap-4 justify-center items-center'>
-            {/* <img src={stats02} alt="" /> */}
-            <GiClubs className='text-[#4CAF4F]' size={48}/>
-            <div>
-              <h1 className='text-[28px]'>46,328</h1>
-              <p>Clubs</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className='flex mt-4 gap-8 flex-wrap'>
-
-          <div className='flex flex-row gap-4 justify-center items-center'>
-            <img src={stats03} alt="" />
-            <div>
-              <h1 className='text-[28px]'>828,867</h1>
-              <p>Event Bookings</p>
-            </div>
-          </div>
-
-          <div className='flex flex-row gap-4 justify-center items-center'>
-            <img src={stats04} alt="" />
-            <div>
-              <h1 className='text-[28px]'>1,926,436</h1>
-              <p>Payments</p>
-            </div>
-          </div>
-
-        </div>
-
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default stats
+export default DeliverySquad;

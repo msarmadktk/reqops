@@ -1,78 +1,45 @@
-import React, { useState } from 'react'
+import React from 'react';
+import heroImage from '../assets/hero.svg'; 
 
-import mainlogo from '../assets/mainlogo.svg'
-import { TiThMenu } from "react-icons/ti";
-import { GiCrossedBones } from "react-icons/gi";
-
-const Menu = () => {
+const LandingPage = () => {
   return (
-    <ul className='flex space-x-12 navbar:space-x-5'>
-      <li><a href="">Home</a></li>
-      <li><a href="">Service</a></li>
-      <li><a href="">Feature</a></li>
-      <li><a href="">Product</a></li>
-      <li><a href="">Testimonial</a></li>
-      <li><a href="">FAQ</a></li>
-    </ul>
-  )
-}
-
-
-const ResponsiveMenu = () =>{
-  return (
-    <ul className='flex flex-col bg-[#4CAF4F] top-0 right-0 fixed text-white sm:w-[60vw] w-[40vw] h-[30vh] justify-center items-start p-[4rem]'>
-    <li><a href="">Home</a></li>
-    <li><a href="">Service</a></li>
-    <li><a href="">Feature</a></li>
-    <li><a href="">Product</a></li>
-    <li><a href="">Testimonial</a></li>
-    <li><a href="">FAQ</a></li>
-  </ul>
-  )
-  }
-const Navbar = () => {
-
-  const [toggle, setToggle] = useState(true)
-
-  return (
-    <div className='flex flex-row w-full justify-between mt-[1rem]'>
-
-      <div className='flex flex-row gap-2 justify-center items-center'>
-        <img src={mainlogo} alt="" />
-        <h1 className='font-bold text-[28px]'>Nexcent</h1>
-      </div>
-
-
-      <div className='flex flex-row items-center w-[40%] nav:hidden'>
-        <Menu />
-      </div>
-
-
-
-      <div className={`flex justify-center items-center xl:gap-6 sm:gap-0 menu:hidden `}>
-        <h1 className='text-[#4CAF4F] font-[500] cursor-pointer'>Login</h1>
-        <button type='button' className='bg-[#4CAF4F] text-white p-[6px] rounded-[6px] ml-4'>Sign Up</button>
-      </div>
-
-
-
-      <div className='flex justify-center items-center fixed right-0.5 top-[1.5rem]'>
-        {
-          toggle
-            ? <><TiThMenu className='nav:block hidden z-50' size={27} onClick={() => setToggle(false)} /> </>
-            : <><GiCrossedBones className='nav:block hidden z-50' size={27} onClick={() => setToggle(true)} /></>
-        }
-
-        {!toggle && (
-          <div>
-            <ResponsiveMenu />
-          </div>
-        )
-        }
-      </div>
-
+    <div className="bg-gray-900 min-h-screen text-white">
+      <header className="flex justify-between items-center p-4">
+        <div className="text-2xl font-bold">reqops</div>
+        <button className="bg-transparent text-white px-4 py-2 rounded">Log In</button>
+      </header>
+      
+      <main className="container mx-auto px-4 py-16 text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Pioneering communication in
+          <span className="block text-pink-400">software delivery.</span>
+        </h1>
+        
+        <p className="text-lg mb-8">
+          Accelerate development with AI-driven speed from design to delivery faster than ever before.
+        </p>
+        
+        <div className="max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your work email"
+            className="w-full p-3 rounded-md bg-gray-800 text-white mb-4"
+          />
+          <button className="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700 transition">
+            Request Early Access
+          </button>
+        </div>
+        
+        <div className="mt-16">
+          <img
+            src= {heroImage}
+            alt="Reqops App Interface"
+            className="max-w-full mx-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default LandingPage;

@@ -1,30 +1,46 @@
-import React from 'react'
-import { Navbar } from '../components'
-import heroImg from '../assets/heroImg.svg'
-const hero = () => {
+import React from 'react';
+import heroImage from '../assets/hero.svg';
+
+const LandingPage = () => {
   return (
+    <div className="bg-gray-900 min-h-screen text-white">
+      <header className="flex justify-between items-center p-4">
+        <div className="text-2xl font-bold">req<span className="text-pink-500">ops</span></div>
 
-    <div className='flex flex-col px-[2rem] gap-[4rem] bg-[#F5F7FA]'>
-      <Navbar />
+        <button className="bg-transparent text-white px-4 py-2 rounded">Log In</button>
+      </header>
 
-      <div className='flex flex-row md:flex-col justify-around items-center gap-8'>
+      <main className="container mx-auto px-4 py-16 text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Pioneering communication in
+          <span className="block text-pink-400">software delivery.</span>
+        </h1>
 
-        <div className='flex flex-col justify-center items-start'>
+        <p className="text-lg mb-8">
+          Accelerate development with AI-driven speed from design to delivery faster than ever before.
+        </p>
 
-          <h1 className='text-[64px] heading:text-[50px] heading:leading-[55px] font-semibold leading-[70px]'>Lessons and insights </h1>
-          <h1 className='text-[64px] heading:text-[50px] heading:leading-[55px] text-[#4CAF4F] leading-[70px] font-semibold'>from 8 years</h1>
-          <p className='mt-4'>Where to grow your business as a photographer: site or social media?</p>
-
-          <button className='flex gap-10 px-[14px] py-[12px] text-white bg-[#4CAF4F] mt-8' type='button'>Register</button>
-
-        </div >
-
-        <div className='flex flex-col justify-center items-start ml-[2rem]' >
-          <img className='h-[407px] w-[391px]' src={heroImg} alt="" />
+        <div className="max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your work email"
+            className="w-full p-3 rounded-md bg-gray-800 text-white mb-4"
+          />
+          <button className="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700 transition">
+            Request Early Access
+          </button>
         </div>
-      </div>
-    </div>
-  )
-}
 
-export default hero
+        <div className="mt-16">
+          <img
+            src={heroImage}
+            alt="Reqops App Interface"
+            className="max-w-full mx-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default LandingPage;

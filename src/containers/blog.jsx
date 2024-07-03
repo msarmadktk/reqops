@@ -1,24 +1,74 @@
-import React from 'react'
-import { Bloging } from '../components'
-import blog01 from '../assets/blog01.png'
-import blog02 from '../assets/blog02.png'
-import blog03 from '../assets/blog03.png'
+import React from 'react';
 
+const WorkChangingFeatures = () => {
+  const plans = [
+    {
+      title: 'Free Trial',
+      features: [
+        'Project Creation',
+        'Customer Journey Mapping',
+        'Customer Journey Mapping AI Workshop',
+        'Journey Map Diagram',
+      ],
+    },
+    {
+      title: 'Registered User',
+      features: [
+        'Project Creation',
+        'Customer Journey Mapping',
+        'Customer Journey Mapping AI Workshop',
+        'Journey Map Diagram',
+        'AI User Story Generation',
+        'User Story AI Workshop',
+      ],
+    },
+    {
+      title: 'Subscription',
+      features: [
+        'Project Creation',
+        'Customer Journey Mapping',
+        'Customer Journey Mapping AI Workshop',
+        'Journey Map Diagram',
+        'AI User Story Generation',
+        'User Story AI Workshop',
+        'Sync to Jira / Azure',
+        'Project Health Analysis & Scope Creep',
+        'Test Case Writing',
+        'Test Case Automation',
+        'Regression Test Maintenance',
+        'All exclusive AI features',
+      ],
+    },
+  ];
 
-const blog = () => {
   return (
-    <div className='flex flex-col justify-center items-center mt-8'>
-      <h1 className='text-[36px] text-center font-semibold'>Caring is the new marketing</h1>
-      <p className='text-center w-[50%] mt-4'>The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
-      
-      <div className='flex flex-row flex-wrap gap-8 mt-8 justify-around'>
-        <Bloging imgUrl={blog01} text={"Creating Streamlined Safeguarding Processes with OneRen"}/>
-        <Bloging imgUrl={blog02} text={"What are your safeguarding responsibilities and how can you manage them?"}/>
-        <Bloging imgUrl={blog03} text={"Revamping the Membership Model with Triathlon Australia"}/>
-
+    <div className="bg-gray-900 text-white p-6 md:p-12">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+        Get access to work-changing features
+      </h2>
+      <div className="flex flex-row sm:flex-col gap-6 justify-center sm:items-center" >
+        {plans.map((plan, index) => (
+          <div key={index} className="flex-1 ">
+            <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-t-lg p-4">
+              <h3 className="text-xl font-semibold text-center">{plan.title}</h3>
+            </div>
+            <div className="bg-gradient-to-br from-pink-500/20 to-purple-600/20 rounded-b-lg p-4 border border-pink-500/50">
+              <ul className="space-y-2">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center">
+                    <svg className="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default blog
+export default WorkChangingFeatures;

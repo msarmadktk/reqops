@@ -1,21 +1,55 @@
-import React from 'react'
-import tesla from '../assets/tesla.png'
-const smith = () => {
+import React from 'react';
+import img1 from '../assets/img1.svg';
+import img2 from '../assets/img2.svg';
+import img3 from '../assets/img3.svg';
+import img4 from '../assets/img4.svg';
+
+const WorkPracticesFramework = () => {
+  const sections = [
+    {
+      title: 'Requirements Management',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: img1
+    },
+    {
+      title: 'Automatic BPMN 2.0 Generation',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: img2
+    },
+    {
+      title: 'Test Automation',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: img3
+    },
+    {
+      title: 'Integrate into your existing ecosystem',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: img4
+    }
+  ];
+
   return (
-    <div className='flex flex-row justify-center items-center md:flex-col bg-[#F5F7FA] mt-[4rem] gap-8 py-[2rem]'>
-
-      <div className='flex justify-center items-center '>
-        <img className='w-[326px] h-[326px] sm:w-[250px] sm:h-[250px]' src={tesla} alt="" />
+    <div className="bg-gray-900 text-white p-6 md:p-12">
+      <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">Transform work practices forever. Our</h2>
+      <h3 className="text-xl md:text-2xl font-semibold mb-8 text-center">Framework for the future:</h3>
+      
+      <div className="space-y-6">
+        {sections.map((section, index) => (
+          <div key={index} className="rounded-lg overflow-hidden bg-gradient-to-br from-pink-600 to-purple-700">
+            <div className="p-6 flex flex-row sm:flex-col items-center">
+              <div className="w-1/2 sm:w-full mb-4 md:mb-0 md:pr-4">
+                <h4 className="text-xl font-semibold mb-2">{section.title}</h4>
+                <p className="text-sm max-w-[400px] mb-4">{section.description}</p>
+              </div>
+              <div className="w-[50%] sm:w-full">
+                <img src={section.image} alt={section.title} className="w-full h-auto rounded-lg" />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className='flex flex-col justify-start w-[50%] items-start'>
-        <p className=' font-[500] text-[#717171]'>Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.</p>
-        <h1 className='text-[#4CAF4F] font-[700] mt-4'>Tim Smith</h1>
-        <p className='mt-2 font-[400] text-[#89939E]'>British Dragon Boat Racing Association</p>
-      </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default smith
+export default WorkPracticesFramework;
